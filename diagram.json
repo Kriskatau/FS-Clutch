@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "author": "Kristiyan Jelyazkov",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": 123.4, "left": -98.4, "attrs": {} },
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": -4.8, "left": -77.3, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 125, "left": 182.4, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay2", "top": 201.8, "left": 182.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 63.6,
+      "left": 349.8,
+      "attrs": { "color": "red", "flip": "" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 150,
+      "left": 359,
+      "attrs": { "color": "green", "flip": "" }
+    }
+  ],
+  "connections": [
+    [ "nano:GND.1", "bb1:16t.a", "black", [ "v38.4", "h-76.8" ] ],
+    [ "relay1:COM", "led1:A", "green", [ "h0" ] ],
+    [ "relay2:COM", "led2:A", "green", [ "h0" ] ],
+    [ "nano:5V", "bb1:15t.a", "red", [ "v33.6", "h-77.3" ] ],
+    [ "relay1:NO", "bb1:15t.d", "red", [ "h30", "v27", "h-230.4", "v-28.8" ] ],
+    [ "nano:2", "relay2:IN", "green", [ "v-14.4", "h115.2", "v254.6" ] ],
+    [ "nano:3", "relay1:IN", "green", [ "v-19.2", "h134.4", "v182.6" ] ],
+    [ "relay2:GND", "bb1:16b.i", "black", [ "h0" ] ],
+    [ "relay2:VCC", "bb1:15b.h", "red", [ "h0" ] ],
+    [ "relay1:VCC", "bb1:15t.b", "red", [ "h0" ] ],
+    [ "relay1:GND", "bb1:16t.c", "black", [ "h0" ] ],
+    [ "bb1:15t.e", "bb1:15b.f", "red", [ "v0" ] ],
+    [ "bb1:16t.e", "bb1:16b.f", "black", [ "v0" ] ],
+    [ "relay2:NO", "bb1:15b.j", "red", [ "h30", "v27", "h-220.8", "v-28.8" ] ],
+    [ "relay1:NC", "led1:C", "black", [ "v-1.2", "h1.2", "v-28.8", "h67.2" ] ],
+    [ "relay2:GND", "relay2:NC", "black", [ "h-9.6", "v-29.2", "h163.2" ] ],
+    [ "led2:C", "relay2:NC", "black", [ "v9.6", "h-76.4" ] ],
+    [ "relay1:NC", "relay1:GND", "black", [ "v-30", "h-123.6", "v38.4" ] ]
+  ],
+  "dependencies": {}
+}
